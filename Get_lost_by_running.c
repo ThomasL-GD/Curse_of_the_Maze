@@ -5,7 +5,7 @@
 
 struct Room{
 	
-	int number;
+	char name[100];
 	
 };
 typedef struct Room room;
@@ -18,19 +18,20 @@ int main(){
 		printf("\n");
 	}
 	
-	room tRoom[10] = {0,1,2,3,4,5,6,7,8,9};
+	room tRoom[10] = {"entrance","empty","dark","strange","secret","weird","scary","hardcore","magic","teleportation"};
 	int bGame = 0;
 	int nChoice = 0;
 	
 	while(bGame == 0){
 		
 		nChoice =-1;
+		printf("\n");
 		
 		while(nChoice < 0 || nChoice > 2){
 			
 			printf("Where do you want to go ?\n");
-			printf("1) Room %d\n", tRoom[1].number);
-			printf("2) Room %d\n", tRoom[2].number);
+			printf("1) \"%s\" room\n", tRoom[1].name);
+			printf("2) \"%s\" room\n", tRoom[2].name);
 			
 			printf("0) Quit game (please don't T_T)\n");
 			
@@ -40,12 +41,12 @@ int main(){
 		
 		if(nChoice == 1){
 			
-			printf("Woaw you arrived at the Room %d !\n", tRoom[1].number);
+			printf("Woaw you arrived at the \"%s\" room !\n", tRoom[1].name);
 			
 		}
 		else if(nChoice == 2){
 			
-			printf("Woaw you arrived at the Room %d !\n", tRoom[2].number);
+			printf("Woaw you arrived at the \"%s\" room !\n", tRoom[2].name);
 			
 		}
 		else if (nChoice == 0){
