@@ -21,37 +21,44 @@ int main(){
 	room tRoom[10] = {"entrance","empty","dark","strange","secret","weird","scary","hardcore","magic","teleportation"};
 	int bGame = 0;
 	int nChoice = 0;
+	char  sChoice[100] = "";
 	
 	while(bGame == 0){
 		
-		nChoice =-1;
+		nChoice = 0;
 		printf("\n");
 		
-		while(nChoice < 0 || nChoice > 2){
+		while(nChoice == 0){
 			
+			nChoice = 1;
 			printf("Where do you want to go ?\n");
-			printf("1) \"%s\" room\n", tRoom[1].name);
-			printf("2) \"%s\" room\n", tRoom[2].name);
+			printf("- \"%s\" room\n", tRoom[1].name);
+			printf("- \"%s\" room\n", tRoom[2].name);
 			
 			printf("0) Quit game (please don't T_T)\n");
 			
-			scanf("%d", &nChoice);
+			scanf("%100s", sChoice);
 			
 		}
 		
-		if(nChoice == 1){
+		if(strcmp(sChoice, tRoom[1].name) == 0){
 			
 			printf("Woaw you arrived at the \"%s\" room !\n", tRoom[1].name);
 			
 		}
-		else if(nChoice == 2){
+		else if(strcmp(sChoice, tRoom[2].name) == 0){
 			
 			printf("Woaw you arrived at the \"%s\" room !\n", tRoom[2].name);
 			
 		}
-		else if (nChoice == 0){
+		else if (strcmp(sChoice, "0") == 0){
 			
 			bGame = 1;
+			
+		}
+		else{
+			
+			nChoice = 0;
 			
 		}
 		
