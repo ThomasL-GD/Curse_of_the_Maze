@@ -73,9 +73,9 @@ int main(){
 					printf("Woaw you arrived at the \"%s\" room !\n", tRoom[i].name);
 					nChoice = 1;
 					printf("%s\n", tRoom[i].description);
-					if(tRoom[nCurrentRoom].bBase == 1){printf("There is a base on this room\n");}
 					stamina -= tRoom[i].difficulty + tRoom[nCurrentRoom].difficulty;
 					nCurrentRoom = i;
+					if(tRoom[nCurrentRoom].bBase == 1){printf("There is a base on this room\n");}
 				}
 				
 			}
@@ -107,6 +107,14 @@ int main(){
 		}
 		
 		
+	}
+	
+	while (stamina <= 0){
+		printf("T_T T_T T_T It's sad T_T T_T T_T (I promised I would do that) T_T T_T T_T");
+	}
+	
+	if(stamina >= 0){
+		printf("	Goodbye ( You should've try to die ;) )");
 	}
 	
 	
